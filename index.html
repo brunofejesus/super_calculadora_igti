@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bruno Ferreira - Super Calculadora</title>
+  </head>
+  <body>
+    <h1>Super Calculadora IGTI-Bruno Ferreira</h1>
+    <div class="container-topo">
+      <div class="flex-item">
+        <label>Primeiro número (A):</label>
+        <input id="numberA" onblur="calcula()" class="css-input" type="number" />
+        <span>Digite e pressione enter</span>
+      </div>
+      <div class="flex-item">
+        <label>Segundo número (B):</label>
+        <input id="numberB" onblur="calcula()" class="css-input" type="number" />
+        <span>Digite e pressione enter</span>
+      </div>
+    </div>
+    <h2>Cálculos</h1>
+    <div class="container">
+      <div class="flex-item">
+        <label>Soma (A + B)</label>
+        <input
+          id="soma"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Subtração 1 (A - B)</label>
+        <input
+          id="subtrair"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Subtração 2 (B - A)</label>
+        <input
+          id="subtrairinv"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="flex-item">
+        <label>Multiplicação (A x B)</label>
+        <input
+          id="multiplicar"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Divisão 1 (A / B)</label>
+        <input
+          id="dividir"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Divisão 2 (B / A)</label>
+        <input
+          id="dividirinv"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="flex-item">
+        <label>Quadrado de a (A²)</label>
+        <input
+          id="quadradoA"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Quadrado de b (B²)</label>
+        <input
+          id="quadradoB"
+          class="css-input"
+          type="text"
+          disabled="disabled"
+          value=""
+        />
+      </div>
+      <div class="flex-item">
+        <label>Divisores inteiros de A:</label>
+        <input id="divisorA" class="css-input" type="text" disabled="disabled" value="" />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="flex-item">
+        <label>Divisores inteiros de B:</label>
+        <input id="divisorB" class="css-input" type="text" disabled="disabled" value="" />
+      </div>
+      <div class="flex-item">
+        <label>Fatorial de A (A!):</label>
+        <input id="fatorialA" class="css-input" type="text" disabled="disabled" value="" />
+      </div>
+      <div class="flex-item">
+        <label>Fatorial de B (B!):</label>
+        <input id="fatorialB" class="css-input" type="text" disabled="disabled" value="" />
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
