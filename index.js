@@ -31,8 +31,14 @@ function multiplicar(a, b) {
 }
 
 function dividir(a, b, toggle) {
-  if (toggle) return a === 0 || b === 0 ? 'Divisão por 0' : formatNumber(b / a);
-  else return a === 0 || b === 0 ? 'Divisão por 0' : formatNumber(a / b);
+  if (toggle)
+    return a === 0 || b === 0
+      ? 'Divisão por 0'
+      : formatNumber((b / a).toFixed(2));
+  else
+    return a === 0 || b === 0
+      ? 'Divisão por 0'
+      : formatNumber((a / b).toFixed(2));
 }
 
 function aoQuadrado(value) {
