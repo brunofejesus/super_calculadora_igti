@@ -18,14 +18,6 @@ inputB.addEventListener('keydown', function (event) {
   }
 });
 
-function f(n) {
-  var r = 1;
-  for (var i = n; i > 1; i--) {
-    r *= i;
-  }
-  return r;
-}
-
 function somar(a, b) {
   return formatNumber(a + b);
 }
