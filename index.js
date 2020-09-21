@@ -1,22 +1,27 @@
 var numberA = 0;
 var numberB = 0;
 
-const inputA = document.getElementById('numberA');
-const inputB = document.getElementById('numberB');
+init();
 
-inputA.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    calcula();
-  }
-});
+function init() {
+  console.log('Essa fera ai bixo!');
+  var inputA = document.getElementById('numberA');
+  var inputB = document.getElementById('numberB');
 
-inputB.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    calcula();
-  }
-});
+  inputA.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      calcula();
+    }
+  });
+
+  inputB.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      calcula();
+    }
+  });
+}
 
 function somar(a, b) {
   return formatNumber(a + b);
