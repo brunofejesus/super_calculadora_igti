@@ -18,27 +18,28 @@ inputB.addEventListener('keydown', function (event) {
   }
 });
 
+function f(n) {
+  var r = 1;
+  for (var i = n; i > 1; i--) {
+    r *= i;
+  }
+  return r;
+}
+
 function somar(a, b) {
   return formatNumber(a + b);
 }
 
-function subtrair(a, b, toggle) {
-  return toggle ? formatNumber(a - b) : formatNumber(b - a);
+function subtrair(a, b) {
+  return formatNumber(a - b);
 }
 
 function multiplicar(a, b) {
   return formatNumber(a * b);
 }
 
-function dividir(a, b, toggle) {
-  if (toggle)
-    return a === 0 || b === 0
-      ? 'Divisão por 0'
-      : formatNumber((b / a).toFixed(2));
-  else
-    return a === 0 || b === 0
-      ? 'Divisão por 0'
-      : formatNumber((a / b).toFixed(2));
+function dividir(a, b) {
+  return formatNumber((a / b).toFixed(2));
 }
 
 function aoQuadrado(value) {
@@ -92,26 +93,14 @@ function calcula() {
 
   if (numberA && numberB) {
     document.getElementById('soma').value = somar(numberA, numberB);
-    document.getElementById('subtrair').value = subtrair(
-      numberA,
-      numberB,
-      true
-    );
-    document.getElementById('subtrairinv').value = subtrair(
-      numberA,
-      numberB,
-      false
-    );
+    document.getElementById('subtrair').value = subtrair(numberA, numberB);
+    document.getElementById('subtrairinv').value = subtrair(numberB, numberA);
     document.getElementById('multiplicar').value = multiplicar(
       numberA,
       numberB
     );
-    document.getElementById('dividir').value = dividir(numberA, numberB, false);
-    document.getElementById('dividirinv').value = dividir(
-      numberA,
-      numberB,
-      true
-    );
+    document.getElementById('dividir').value = dividir(numberA, numberB);
+    document.getElementById('dividirinv').value = dividir(numberB, numberA);
 
     document.getElementById('quadradoB').value = aoQuadrado(numberB);
     document.getElementById('quadradoA').value = aoQuadrado(numberA);
@@ -125,16 +114,8 @@ function calcula() {
       document.getElementById('quadradoA').value = aoQuadrado(numberA);
       document.getElementById('divisorA').value = divisoresNumber(numberA);
       document.getElementById('fatorialA').value = fatorial(numberA);
-      document.getElementById('dividir').value = dividir(
-        numberA,
-        numberB,
-        false
-      );
-      document.getElementById('dividirinv').value = dividir(
-        numberA,
-        numberB,
-        true
-      );
+      document.getElementById('dividir').value = dividir(numberA, numberB);
+      document.getElementById('dividirinv').value = dividir(numberB, numberA);
     } else {
       document.getElementById('quadradoA').value = msgA;
       document.getElementById('divisorA').value = msgA;
@@ -145,11 +126,7 @@ function calcula() {
       document.getElementById('quadradoB').value = aoQuadrado(numberB);
       document.getElementById('divisorB').value = divisoresNumber(numberB);
       document.getElementById('fatorialB').value = fatorial(numberB);
-      document.getElementById('dividirinv').value = dividir(
-        numberA,
-        numberB,
-        true
-      );
+      document.getElementById('dividirinv').value = dividir(numberA, numberB);
     } else {
       document.getElementById('quadradoB').value = msgB;
       document.getElementById('divisorB').value = msgB;
